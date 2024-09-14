@@ -13,7 +13,7 @@
     <div class="form-group">
       <label> Kategorija: &nbsp; </label>
       <select id = "kategorija-id" name = "kategorija-id"
-              [(ngModel)]="biljeska.kategorija_id">
+              [(ngModel)]="biljeska.kategorijaid">
         <option *ngFor="let kategorija of kategorije" [ngValue]="kategorija.id">
           {{kategorija.ime}}
         </option>

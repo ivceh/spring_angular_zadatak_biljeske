@@ -11,6 +11,7 @@ export class BiljeskaService {
   private baseURL = "http://localhost:8080/api/v1";
   private endpointBiljeske = "/biljeske";
   private endpointBiljeska = "/biljeska";
+  private endpointBiljeskeByIdKategorije = "/biljeske_by_id_kategorije";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -31,6 +32,10 @@ export class BiljeskaService {
   }
 
   deleteBiljeska(id: number): Observable<Object>{
-    return this.httpClient.delete(`${this.baseURL}${this.endpointBiljeska}/${id}`)
+    return this.httpClient.delete(`${this.baseURL}${this.endpointBiljeska}/${id}`);
+  }
+
+  getBiljeskeByIdKategorije(id_kategorije: number): Observable<Biljeska[]> {
+    return this.httpClient.get<Biljeska[]>(`${this.baseURL}${this.endpointBiljeskeByIdKategorije}/${id_kategorije}`);
   }
 }

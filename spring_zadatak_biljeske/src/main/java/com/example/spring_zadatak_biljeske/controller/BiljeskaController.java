@@ -42,7 +42,7 @@ public class BiljeskaController {
         Biljeska biljeska = biljeskaRepository.findById(id).orElseThrow(
                 () -> new ResourceNotFoundException("Tražena bilješka nije pronađena!"));
         biljeska.setTekst(biljeskaDetails.getTekst());
-        biljeska.setKategorija_id(biljeskaDetails.getKategorija_id());
+        biljeska.setKategorijaid(biljeskaDetails.getKategorijaid());
 
         Biljeska updatedBiljeska = biljeskaRepository.save(biljeska);
         return ResponseEntity.ok().body((Biljeska) updatedBiljeska);
@@ -52,5 +52,11 @@ public class BiljeskaController {
     @DeleteMapping("/biljeska/{id}")
     public void deleteBiljeska(@PathVariable Long id){
         biljeskaRepository.deleteById(id);
+    }
+
+    @GetMapping("/biljeske_by_id_kategorije/{kategorijaid}")
+    public List<Biljeska> getAllBiljeskeByKategorijaId(@PathVariable Long kategorijaid){
+        List<Biljeska> l1 = biljeskaRepository.findByKategorijaid(kategorijaid);
+        return l1;
     }
 }

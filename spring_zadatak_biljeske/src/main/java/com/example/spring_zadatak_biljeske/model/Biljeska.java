@@ -10,15 +10,15 @@ public class Biljeska {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "kategorija_id")
-    private long kategorija_id;
+    @Column(name = "kategorijaid")
+    private long kategorijaid;
 
     @Column(name = "tekst")
     private String tekst;
 
-    public Biljeska(long id, long kategorija_id, String tekst) {
+    public Biljeska(long id, long kategorijaid, String tekst) {
         this.id = id;
-        this.kategorija_id = kategorija_id;
+        this.kategorijaid = kategorijaid;
         this.tekst = tekst;
     }
 
@@ -32,12 +32,12 @@ public class Biljeska {
         this.id = id;
     }
 
-    public long getKategorija_id() {
-        return kategorija_id;
+    public long getKategorijaid() {
+        return kategorijaid;
     }
 
-    public void setKategorija_id(long kategorija_id) {
-        this.kategorija_id = kategorija_id;
+    public void setKategorijaid(long kategorijaid) {
+        this.kategorijaid = kategorijaid;
     }
 
     public String getTekst() {

@@ -21,4 +21,8 @@ export class KategorijaService {
   createKategorija(kategorija: Kategorija): Observable<Object>{
     return this.httpClient.post(`${this.baseURL}${this.endpointKategorija}`, kategorija)
   }
+
+  getKategorija(id: number): Observable<any> {
+    return this.httpClient.get<Kategorija>(`${this.baseURL}${this.endpointKategorija}/${id}`);
+  }
 }

@@ -5,11 +5,13 @@ import {DodajKategorijuComponent} from "./dodaj-kategoriju/dodaj-kategoriju.comp
 import {PopisBiljeskiComponent} from "./popis-biljeski/popis-biljeski.component";
 import {DodajBiljeskuComponent} from "./dodaj-biljesku/dodaj-biljesku.component";
 import {UrediBiljeskuComponent} from "./uredi-biljesku/uredi-biljesku.component";
+import {BiljeskeIzKategorijeComponent} from "./biljeske-iz-kategorije/biljeske-iz-kategorije.component";
 
 const routes: Routes = [
   {path: 'kategorije', component: PopisKategorijaComponent},
   {path: 'dodaj-kategoriju', component: DodajKategorijuComponent},
   {path: 'biljeske', component: PopisBiljeskiComponent},
+  {path: 'kategorija-biljeske/:id', component: BiljeskeIzKategorijeComponent},
   {path: 'dodaj-biljesku', component: DodajBiljeskuComponent},
   {path: 'uredi-biljesku/:id', component: UrediBiljeskuComponent},
   {path: '', redirectTo:'kategorije', pathMatch: 'full'}

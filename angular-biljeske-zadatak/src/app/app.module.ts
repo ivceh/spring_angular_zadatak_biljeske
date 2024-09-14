@@ -10,6 +10,7 @@ import { FormsModule } from "@angular/forms";
 import { DodajBiljeskuComponent } from './dodaj-biljesku/dodaj-biljesku.component';
 import { PopisBiljeskiComponent } from './popis-biljeski/popis-biljeski.component';
 import { UrediBiljeskuComponent } from './uredi-biljesku/uredi-biljesku.component';
+import { BiljeskeIzKategorijeComponent } from './biljeske-iz-kategorije/biljeske-iz-kategorije.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UrediBiljeskuComponent } from './uredi-biljesku/uredi-biljesku.componen
     DodajKategorijuComponent,
     DodajBiljeskuComponent,
     PopisBiljeskiComponent,
-    UrediBiljeskuComponent
+    UrediBiljeskuComponent,
+    BiljeskeIzKategorijeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,8 @@
 <h2> Popis kategorija </h2>
-<ul>
-  <li *ngFor="let kategorija of kategorije">
-    {{kategorija.ime}}
+<ul class="list-group">
+  <li class="list-group-item-action" *ngFor="let kategorija of kategorije">
+    <a class="nav-link" href="/kategorija-biljeske/{{kategorija.id}}">
+      {{kategorija.ime}}
+    </a>
   </li>
 </ul>
