@@ -1,0 +1,25 @@
+<div class="col-md-4 offset-md-3">
+  <h3> Uredi bilješku </h3>
+  <form (ngSubmit) = onSubmit()>
+
+    <div class="form-group">
+      <label> Tekst: </label>
+      <textarea type="text" class="form-control text-area text-box multi-line"
+                id = "tekst" data-val="true"
+                [(ngModel)] = "biljeska.tekst" name = "tekst"
+                data-val-length="Maximum = 2045 characters" data-val-length-max="2045"
+                cols="100" rows="4"></textarea>
+    </div>
+    <div class="form-group">
+      <label> Kategorija: &nbsp; </label>
+      <select id = "kategorija-id" name = "kategorija-id"
+              [(ngModel)]="biljeska.kategorija_id">
+        <option *ngFor="let kategorija of kategorije" [ngValue]="kategorija.id">
+          {{kategorija.ime}}
+        </option>
+      </select>
+    </div>
+    <br>
+    <button class = "btn btn-success" type="submit"> Uredi </button>
+  </form>
+</div>

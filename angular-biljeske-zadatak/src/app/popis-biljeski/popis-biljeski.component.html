@@ -1,0 +1,28 @@
+<h2> Popis bilješki </h2>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Kategorija</th>
+    <th>Tekst bilješke</th>
+    <th>Radnje</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let biljeska of biljeske">
+    <td>{{getKategorijaById(biljeska.kategorija_id)?.ime}}</td>
+    <td>{{biljeska.tekst}}</td>
+    <td>
+      <button (click) = "updateBiljeska(biljeska.id)" class = "btn btn-info">
+        Uredi
+      </button>
+      &nbsp;
+      <button (click) = "deleteBiljeska(biljeska.id)" class = "btn btn-danger">
+        Izbriši
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+
