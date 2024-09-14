@@ -1,0 +1,13 @@
+<div class="col-md-4 offset-md-3">
+<h3> Dodaj kategoriju </h3>
+<form (ngSubmit) = onSubmit()>
+
+  <div class="form-group">
+    <label> Ime: </label>
+    <input type="text" class="form-control" id = "ime"
+      [(ngModel)] = "kategorija.ime" name = "ime">
+  </div>
+  <br>
+  <button class = "btn btn-success" type="submit"> Dodaj </button>
+</form>
+</div>
