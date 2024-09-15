@@ -25,14 +25,24 @@
 </div>
 <br>
 <div>
-  <label> Datoteke: </label>
-  <span *ngFor="let datoteka of postojeceDatoteke; last as isLast">
-    {{datoteka.ime}}<span *ngIf="!isLast">,</span>
-    <!-- Dodati download i delete mogućnosti -->
-  </span>
-  <br>
-  <label> Dodaj datoteku: </label>
-  <input type="file" (change)="selectFile($event)" />
-  <button (click)="upload()">Dodaj datoteku</button>
-  <p>{{ message }}</p>
+  <div class="input-group mb-3">
+    <label><h5> Datoteke: </h5></label> &nbsp;&nbsp;
+    <span *ngFor="let datoteka of postojeceDatoteke; last as isLast">
+      {{datoteka.ime}}<span *ngIf="!isLast">, &nbsp; </span>
+      <!-- Dodati download i delete mogućnosti -->
+    </span>
+  </div>
+  <div class="input-group mb-3">
+    <div class="custom-file">
+      <input type="file" class="custom-file-input" id="fileInput" (change)="selectFile($event)" />
+      <!--label class="custom-file-label" for="fileInput">Odaberi datoteku</label-->
+    </div>
+    &nbsp;
+    <div class="input-group-append">
+      <button class="btn btn-primary btn-sm" (click)="upload()">Dodaj datoteku</button>
+    </div>
+  </div>
+
+  <!-- Show the status message -->
+  <p class="alert alert-info" *ngIf="message">{{ message }}</p>
 </div>

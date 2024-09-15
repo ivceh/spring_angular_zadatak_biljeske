@@ -77,6 +77,7 @@ export class UrediBiljeskuComponent implements OnInit {
         this.datotekaService.upload(this.currentFile, this.biljeska.id).subscribe(
           (response) => {
             this.message = 'File uploaded successfully!';
+            this.getPostojeceDatoteke();
           },
           (err) => {
             this.message = 'Could not upload the file!';

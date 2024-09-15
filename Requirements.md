@@ -1,6 +1,6 @@
 Osnovni zadaci (riješeni su ~~precrtani~~):
 1. Upload datoteka!
-   ~~upload, view~~, download, delete, update popisa nakon dodavanja ili brisanja
+   ~~upload, view~~, download, delete, ~~update popisa nakon dodavanja~~ ili brisanja
 1. Security i login!
 1. Mogućnost više kategorija za jednu bilješku (preurediti bazu, stupac kategorijaid neće biti u tablici biljeske
    nego će trebati nova tablica za many-to-many relationship biljeskaid, kategorijaid)
@@ -9,7 +9,7 @@ Osnovni zadaci (riješeni su ~~precrtani~~):
 1. Pamti se vrijeme i korisnik za bilješku. Prikaz toga u tablici.
 1. ~~Prikaz bilješki po kategoriji~~
 1. Korištenje udaljene baze na render.com.
-1. Pretraživanje bilješki prema tekstu.
+1. Pretraživanje bilješki prema tekstu. (SQL FULLTEXT indeksi)
 1. Bi li sve bilješke trebale biti vidljive svim korisnicima
    ili svakom korisniku samo njegove?
 
@@ -25,3 +25,4 @@ Dodatni zadaci:
 1. SpringZadatakBiljeskeApplicationTests, testovi na frontendu i zajednički testovi cijele aplikacije.
 1. Kako izgleda na mobitelu?
 1. Upload više datoteka odjednom.
+1. Drag and drop datoteka.
