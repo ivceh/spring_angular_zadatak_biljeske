@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Biljeska} from "../biljeska";
-import {Observable} from "rxjs";
+import {concat, Observable} from "rxjs";
 import {BiljeskaService} from "../biljeska.service";
 import {Kategorija} from "../kategorija";
 import {KategorijaService} from "../kategorija.service";
@@ -21,20 +21,26 @@ export class PopisBiljeskiComponent implements OnInit{
   }
 
   ngOnInit() {
+    this.getKategorije().subscribe(
+      (data) => {
+        this.kategorije = data;
+
+        this.getBiljeske().subscribe(
+          (data) => {
+            this.biljeske = data;
+          }
+        );
+      }
+    );
     this.getBiljeske();
-    this.getKategorije();
   }
 
-  private getBiljeske(): void{
-    this.biljeskaService.getBiljeskelist().subscribe((data) => {
-      this.biljeske = data;
-    });
+  private getBiljeske(){
+    return this.biljeskaService.getBiljeskelist()
   }
 
-  private getKategorije(): void{
-    this.kategorijaService.getKategorijelist().subscribe(data => {
-      this.kategorije = data;
-    });
+  private getKategorije(){
+    return this.kategorijaService.getKategorijelist()
   }
 
   getKategorijaById(id: number): Kategorija | undefined {

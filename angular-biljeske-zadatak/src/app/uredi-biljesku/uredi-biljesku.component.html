@@ -21,5 +21,10 @@
     </div>
     <br>
     <button class = "btn btn-success" type="submit"> Uredi </button>
+    <div>
+      <input type="file" (change)="selectFile($event)" />
+      <button (click)="upload()">Dodaj datoteku</button>
+      <p>{{ message }}</p>
+    </div>
   </form>
 </div>
