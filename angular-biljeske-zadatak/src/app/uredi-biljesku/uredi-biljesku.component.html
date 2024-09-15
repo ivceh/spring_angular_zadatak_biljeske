@@ -1,4 +1,4 @@
-<div class="col-md-4 offset-md-3">
+<div class="col-md-4 offset-md-2">
   <h3> Uredi bilješku </h3>
   <form (ngSubmit) = onSubmit()>
 
@@ -21,10 +21,18 @@
     </div>
     <br>
     <button class = "btn btn-success" type="submit"> Uredi </button>
-    <div>
-      <input type="file" (change)="selectFile($event)" />
-      <button (click)="upload()">Dodaj datoteku</button>
-      <p>{{ message }}</p>
-    </div>
   </form>
+</div>
+<br>
+<div>
+  <label> Datoteke: </label>
+  <span *ngFor="let datoteka of postojeceDatoteke; last as isLast">
+    {{datoteka.ime}}<span *ngIf="!isLast">,</span>
+    <!-- Dodati download i delete mogućnosti -->
+  </span>
+  <br>
+  <label> Dodaj datoteku: </label>
+  <input type="file" (change)="selectFile($event)" />
+  <button (click)="upload()">Dodaj datoteku</button>
+  <p>{{ message }}</p>
 </div>

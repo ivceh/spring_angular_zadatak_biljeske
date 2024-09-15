@@ -1,5 +1,6 @@
 package com.example.spring_zadatak_biljeske.controller;
 
+import com.example.spring_zadatak_biljeske.model.Biljeska;
 import com.example.spring_zadatak_biljeske.model.Datoteka;
 import com.example.spring_zadatak_biljeske.repository.DatotekaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/dat")
@@ -37,5 +39,10 @@ public class DatotekaController {
         datoteka.setBiljeskaid(biljeskaid);
 
         return datotekaRepository.save(datoteka);
+    }
+
+    @GetMapping("/datoteke_by_id_biljeske/{biljeskaid}")
+    public List<Datoteka> getAllDatotekeByBiljeskaId(@PathVariable Long biljeskaid){
+        return datotekaRepository.findByBiljeskaid(biljeskaid);
     }
 }

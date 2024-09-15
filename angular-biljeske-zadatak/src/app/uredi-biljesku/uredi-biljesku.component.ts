@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {Kategorija} from "../kategorija";
 import {KategorijaService} from "../kategorija.service";
 import {DatotekaService} from "../datoteka.service";
+import {Datoteka} from "../datoteka";
 
 @Component({
   selector: 'app-uredi-biljesku',
@@ -15,6 +16,8 @@ export class UrediBiljeskuComponent implements OnInit {
   biljeska: Biljeska = new Biljeska();
   id: number = -3;
   kategorije: Kategorija[] = [];
+
+  postojeceDatoteke: Datoteka[] = [];
 
   selectedFiles?: FileList;
   currentFile?: File;
@@ -30,6 +33,7 @@ export class UrediBiljeskuComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
     this.getKategorije();
     this.getBiljeskaById(this.id);
+    this.getPostojeceDatoteke();
   }
 
   onSubmit(){
@@ -38,7 +42,6 @@ export class UrediBiljeskuComponent implements OnInit {
 
   private getBiljeskaById(id: number): void{
     this.biljeskaService.getBiljeska(id).subscribe(data => {
-      console.log(data);
       this.biljeska = data;
     }, error => console.log(error));
   }
@@ -80,5 +83,11 @@ export class UrediBiljeskuComponent implements OnInit {
           });
       }
     }
+  }
+
+  private getPostojeceDatoteke(): void{
+    this.datotekaService.getDatotekeByIdBiljeske(this.id).subscribe(data => {
+      this.postojeceDatoteke = data;
+    });
   }
 }
