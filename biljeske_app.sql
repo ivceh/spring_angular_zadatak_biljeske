@@ -83,8 +83,7 @@ INSERT INTO `kategorije` (`id`, `ime`) VALUES
 (3, 'biljke'),
 (4, 'matematika'),
 (5, 'knjige'),
-(6, 'gljive'),
-(11, 'patuljasti kunić');
+(6, 'gljive');
 
 --
 -- Indexes for dumped tables
