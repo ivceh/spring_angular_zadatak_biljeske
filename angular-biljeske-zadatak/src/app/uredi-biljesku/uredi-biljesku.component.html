@@ -1,4 +1,4 @@
-<div class="col-md-4 offset-md-2">
+<div class="col-md-4 offset-md-1">
   <h3> Uredi bilješku </h3>
   <form (ngSubmit) = onSubmit()>
 
@@ -28,7 +28,7 @@
   <div class="input-group mb-3">
     <label><h5> Datoteke: </h5></label> &nbsp;&nbsp;
     <span *ngFor="let datoteka of postojeceDatoteke; last as isLast">
-      {{datoteka.ime}}
+      <button (click)="downloadFile(datoteka.id, datoteka.ime)" class="btn-sm">{{datoteka.ime}}</button>
       <!-- Dodati download i delete mogućnosti -->
       <button type="button" class="close btn-sm" aria-label="Close" (click)="brisiDatoteku(datoteka.id)">
         <span aria-hidden="true">&times;</span>

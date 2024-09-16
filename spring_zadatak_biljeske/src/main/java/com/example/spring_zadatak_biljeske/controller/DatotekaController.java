@@ -1,9 +1,12 @@
 package com.example.spring_zadatak_biljeske.controller;
 
+import com.example.spring_zadatak_biljeske.exception.ResourceNotFoundException;
 import com.example.spring_zadatak_biljeske.model.Biljeska;
 import com.example.spring_zadatak_biljeske.model.Datoteka;
 import com.example.spring_zadatak_biljeske.repository.DatotekaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -47,7 +50,22 @@ public class DatotekaController {
     }
 
     @DeleteMapping("/datoteka/{id}")
-    public void deleteDatoteka(@PathVariable Long id){
+    public void deleteFile(@PathVariable Long id){
         datotekaRepository.deleteById(id);
+    }
+
+    private Datoteka getFileById(Long id) {
+        return datotekaRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("File not found with id " + id));
+    }
+
+    @GetMapping("/download/{id}")
+    public ResponseEntity<byte[]> downloadFile(@PathVariable Long id) {
+        Datoteka datoteka = this.getFileById(id);
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + datoteka.getIme() + "\"")
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .body(datoteka.getData());
     }
 }

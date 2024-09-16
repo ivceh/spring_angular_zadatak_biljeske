@@ -34,4 +34,10 @@ export class DatotekaService {
   deleteDatoteka(id: number): Observable<Object>{
     return this.httpClient.delete(`${this.baseURL}${this.endpointDatoteka}/${id}`);
   }
+
+  downloadFile(fileId: number) {
+    return this.httpClient.get(`${this.baseURL}/download/${fileId}`, {
+      responseType: 'blob' // This is important to treat the response as a Blob
+    });
+  }
 }

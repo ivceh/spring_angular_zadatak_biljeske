@@ -98,4 +98,15 @@ export class UrediBiljeskuComponent implements OnInit {
       this.getPostojeceDatoteke();
     });
   }
+
+  downloadFile(fileId: number, fileName: string) {
+    this.datotekaService.downloadFile(fileId).subscribe(blob => {
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = fileName; // Provide a filename for the download
+      a.click();
+      window.URL.revokeObjectURL(url); // Clean up URL
+    });
+  }
 }
