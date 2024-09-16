@@ -48,7 +48,7 @@ public class BiljeskaController {
         return ResponseEntity.ok().body((Biljeska) updatedBiljeska);
     }
 
-    //izbrisi biljesku (pozabaviti se s provjerom uspješnosti)
+    //izbrisi biljesku (pozabaviti se s provjerom uspješnosti ovdje i za datoteke)
     @DeleteMapping("/biljeska/{id}")
     public void deleteBiljeska(@PathVariable Long id){
         biljeskaRepository.deleteById(id);

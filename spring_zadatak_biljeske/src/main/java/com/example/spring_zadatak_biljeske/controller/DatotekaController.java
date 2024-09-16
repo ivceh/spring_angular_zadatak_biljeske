@@ -45,4 +45,9 @@ public class DatotekaController {
     public List<Datoteka> getAllDatotekeByBiljeskaId(@PathVariable Long biljeskaid){
         return datotekaRepository.findByBiljeskaid(biljeskaid);
     }
+
+    @DeleteMapping("/datoteka/{id}")
+    public void deleteDatoteka(@PathVariable Long id){
+        datotekaRepository.deleteById(id);
+    }
 }

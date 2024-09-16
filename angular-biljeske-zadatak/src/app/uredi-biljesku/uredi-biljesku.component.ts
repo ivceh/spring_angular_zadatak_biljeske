@@ -91,4 +91,11 @@ export class UrediBiljeskuComponent implements OnInit {
       this.postojeceDatoteke = data;
     });
   }
+
+  brisiDatoteku(id: number){
+    this.datotekaService.deleteDatoteka(id).subscribe(data => {
+      console.log(data)
+      this.getPostojeceDatoteke();
+    });
+  }
 }

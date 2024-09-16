@@ -30,4 +30,8 @@ export class DatotekaService {
   getDatotekeByIdBiljeske(id_biljeske: number): Observable<Datoteka[]> {
     return this.httpClient.get<Datoteka[]>(`${this.baseURL}${this.endpointDatotekeByIdBiljeske}/${id_biljeske}`);
   }
+
+  deleteDatoteka(id: number): Observable<Object>{
+    return this.httpClient.delete(`${this.baseURL}${this.endpointDatoteka}/${id}`);
+  }
 }
