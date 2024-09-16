@@ -11,6 +11,7 @@ import { DodajBiljeskuComponent } from './dodaj-biljesku/dodaj-biljesku.componen
 import { PopisBiljeskiComponent } from './popis-biljeski/popis-biljeski.component';
 import { UrediBiljeskuComponent } from './uredi-biljesku/uredi-biljesku.component';
 import { BiljeskeIzKategorijeComponent } from './biljeske-iz-kategorije/biljeske-iz-kategorije.component';
+import { PrijavaComponent } from './prijava/prijava.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BiljeskeIzKategorijeComponent } from './biljeske-iz-kategorije/biljeske
     DodajBiljeskuComponent,
     PopisBiljeskiComponent,
     UrediBiljeskuComponent,
-    BiljeskeIzKategorijeComponent
+    BiljeskeIzKategorijeComponent,
+    PrijavaComponent
   ],
   imports: [
     BrowserModule,

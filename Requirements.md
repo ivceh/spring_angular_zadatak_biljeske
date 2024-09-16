@@ -1,7 +1,7 @@
 Osnovni zadaci (riješeni su ~~precrtani~~):
 1. Upload datoteka!
    ~~upload, view~~, download, delete, ~~update popisa nakon dodavanja~~ ili brisanja
-1. Security i login!
+1. Security i login! Database user umjesto in-memory usera.
 1. Mogućnost više kategorija za jednu bilješku (preurediti bazu, stupac kategorijaid neće biti u tablici biljeske
    nego će trebati nova tablica za many-to-many relationship biljeskaid, kategorijaid)
 1. Ne dopušta se bilješka bez ijedne kategorije.
@@ -14,7 +14,8 @@ Osnovni zadaci (riješeni su ~~precrtani~~):
    ili svakom korisniku samo njegove?
 
 Dodatni zadaci:
-1. Provjeriti da @Lob radi za model Datoteka.
+1. Role-based Access Control
+1. baseURL uključuje i hostname?
 1. Pozabaviti se s deprecated stvarima u kodu (npr. subscribe).
 1. Pozabaviti se s duplikacijama u kodu.
 1. Pozabaviti se s private, public, protected.
