@@ -8,8 +8,9 @@
     <th>Radnje</th>
   </tr>
   </thead>
-  <tbody>
+  <tbody>  <!-- class="pagination"-->
   <tr *ngFor="let biljeska of biljeske">
+  <!-- | paginate :{itemsPerPage:5, currentPage: p } let i = index"-->
     <td>{{getKategorijaById(biljeska.kategorijaid)?.ime}}</td>
     <td>{{biljeska.tekst}}</td>
     <td>
@@ -23,6 +24,8 @@
     </td>
   </tr>
   </tbody>
+
 </table>
 
-
+<!--pagination-controls previousLabel=”Prev” nextLabel=”Next” (pageChange)="p =$event">
+</pagination-controls-->

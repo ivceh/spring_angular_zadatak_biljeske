@@ -12,6 +12,8 @@ import { PopisBiljeskiComponent } from './popis-biljeski/popis-biljeski.componen
 import { UrediBiljeskuComponent } from './uredi-biljesku/uredi-biljesku.component';
 import { BiljeskeIzKategorijeComponent } from './biljeske-iz-kategorije/biljeske-iz-kategorije.component';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,8 @@ import { BiljeskeIzKategorijeComponent } from './biljeske-iz-kategorije/biljeske
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

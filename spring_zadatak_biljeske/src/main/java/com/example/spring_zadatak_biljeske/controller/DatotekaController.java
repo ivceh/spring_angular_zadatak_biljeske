@@ -10,6 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,6 +23,7 @@ public class DatotekaController {
     @Autowired
     private DatotekaRepository datotekaRepository;
 
+    @Transactional
     @PostMapping("/upload")
     public ResponseEntity<Datoteka> uploadFile(@RequestParam("datoteka") MultipartFile file,
                                                @RequestParam("biljeskaid") Long biljeskaid)
@@ -44,11 +46,13 @@ public class DatotekaController {
         return datotekaRepository.save(datoteka);
     }
 
+    @Transactional
     @GetMapping("/datoteke_by_id_biljeske/{biljeskaid}")
     public List<Datoteka> getAllDatotekeByBiljeskaId(@PathVariable Long biljeskaid){
         return datotekaRepository.findByBiljeskaid(biljeskaid);
     }
 
+    @Transactional
     @DeleteMapping("/datoteka/{id}")
     public void deleteFile(@PathVariable Long id){
         datotekaRepository.deleteById(id);
@@ -59,6 +63,7 @@ public class DatotekaController {
                 .orElseThrow(() -> new ResourceNotFoundException("File not found with id " + id));
     }
 
+    @Transactional
     @GetMapping("/download/{id}")
     public ResponseEntity<byte[]> downloadFile(@PathVariable Long id) {
         Datoteka datoteka = this.getFileById(id);
