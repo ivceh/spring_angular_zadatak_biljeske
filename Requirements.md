@@ -5,8 +5,9 @@ Osnovni zadaci (riješeni su ~~precrtani~~):
 1. Mogućnost više kategorija za jednu bilješku (preurediti bazu, stupac kategorijaid neće biti u tablici biljeske
    nego će trebati nova tablica za many-to-many relationship biljeskaid, kategorijaid)
 1. Ne dopušta se bilješka bez ijedne kategorije.
-1. Paginacija (Prvo s dohvaćanjem svih podataka, kasnije s parcijalnim SQL upitima).
+1. ~~Paginacija (Prvo s dohvaćanjem svih podataka~~, kasnije s parcijalnim SQL upitima).
 1. Pamti se vrijeme i korisnik za bilješku. Prikaz toga u tablici.
+1. Naslov bilješke.
 1. ~~Prikaz bilješki po kategoriji~~
 1. ~~Korištenje udaljene baze na render.com. (Trenutna lokalna baza je na [biljeske_app.sql](biljeske_app.sql))~~
 1. Pretraživanje bilješki prema tekstu. (SQL FULLTEXT indeksi)
