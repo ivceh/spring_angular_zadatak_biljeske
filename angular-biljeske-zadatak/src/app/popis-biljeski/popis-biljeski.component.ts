@@ -14,7 +14,7 @@ import {Router} from "@angular/router";
 export class PopisBiljeskiComponent implements OnInit{
   biljeske!: Biljeska[];
   kategorije!: Kategorija[];
-  p: Number = 1;
+  p = 1;
 
   constructor(private biljeskaService: BiljeskaService,
               private kategorijaService: KategorijaService,

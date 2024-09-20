@@ -3,14 +3,16 @@
 <table class="table table-striped">
   <thead>
   <tr>
+    <td>#</td>
     <th>Kategorija</th>
     <th>Tekst bilješke</th>
     <th>Radnje</th>
   </tr>
   </thead>
   <tbody>  <!-- class="pagination"-->
-  <tr *ngFor="let biljeska of biljeske">
+  <tr class="cursor-pointer" *ngFor="let biljeska of biljeske | paginate :{itemsPerPage:5, currentPage: p } let i = index">
   <!-- | paginate :{itemsPerPage:5, currentPage: p } let i = index"-->
+    <td>{{i}}</td>git 
     <td>{{getKategorijaById(biljeska.kategorijaid)?.ime}}</td>
     <td>{{biljeska.tekst}}</td>
     <td>
@@ -24,6 +26,9 @@
     </td>
   </tr>
   </tbody>
+
+  <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="p =$event">
+  </pagination-controls>
 
 </table>
 
