@@ -3,13 +3,13 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th>Tekst bilješke</th>
+    <th>Naslov bilješke</th>
     <th>Radnje</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let biljeska of biljeske">
-    <td>{{biljeska.tekst}}</td>
+    <td>{{biljeska.naslov}}</td>
     <td>
       <button (click) = "updateBiljeska(biljeska.id)" class = "btn btn-info">
         Uredi

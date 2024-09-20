@@ -5,7 +5,7 @@
   <tr>
     <th class="col-sm-1 col-md-1">#</th>
     <th>Kategorija</th>
-    <th>Tekst bilješke</th>
+    <th>Naslov bilješke</th>
     <th>Radnje</th>
   </tr>
   </thead>
@@ -14,7 +14,7 @@
   <!-- | paginate :{itemsPerPage:5, currentPage: p } let i = index"-->
     <td>{{i}}</td>
     <td>{{getKategorijaById(biljeska.kategorijaid)?.ime}}</td>
-    <td>{{biljeska.tekst}}</td>
+    <td>{{biljeska.naslov}}</td>
     <td>
       <button (click) = "updateBiljeska(biljeska.id)" class = "btn btn-info">
         Uredi

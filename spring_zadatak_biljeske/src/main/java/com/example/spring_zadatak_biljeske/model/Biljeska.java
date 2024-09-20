@@ -13,6 +13,9 @@ public class Biljeska {
     @Column(name = "kategorijaid")
     private long kategorijaid;
 
+    @Column(name = "naslov")
+    private String naslov;
+
     @Column(name = "tekst")
     private String tekst;
 
@@ -38,6 +41,14 @@ public class Biljeska {
 
     public void setKategorijaid(long kategorijaid) {
         this.kategorijaid = kategorijaid;
+    }
+
+    public String getNaslov() {
+        return naslov;
+    }
+
+    public void setNaslov(String naslov) {
+        this.naslov = naslov;
     }
 
     public String getTekst() {
