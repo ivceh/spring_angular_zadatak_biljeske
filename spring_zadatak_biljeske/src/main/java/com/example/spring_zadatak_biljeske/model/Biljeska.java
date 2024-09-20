@@ -2,6 +2,8 @@ package com.example.spring_zadatak_biljeske.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "biljeske")
 public class Biljeska {
@@ -18,6 +20,9 @@ public class Biljeska {
 
     @Column(name = "tekst")
     private String tekst;
+
+    @Column(name = "datum") // Add this line for the new date column
+    private LocalDate datum;
 
     public Biljeska(long id, long kategorijaid, String tekst) {
         this.id = id;
@@ -57,5 +62,13 @@ public class Biljeska {
 
     public void setTekst(String tekst) {
         this.tekst = tekst;
+    }
+
+    public LocalDate getDatum() {
+        return datum;
+    }
+
+    public void setDatum(LocalDate datum) {
+        this.datum = datum;
     }
 }

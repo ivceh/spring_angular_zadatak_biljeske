@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -25,7 +26,9 @@ public class BiljeskaController {
     // dodaj novu biljesku
     @PostMapping("/biljeska")
     public Biljeska createBiljeska(@RequestBody Biljeska biljeska){
+        biljeska.setDatum(LocalDate.now());
         return biljeskaRepository.save(biljeska);
+
     }
 
     // pronađi bilješku po ID-u
