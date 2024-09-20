@@ -1,11 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap";
 
-body {
-  padding-bottom: 60px;
-}
-
-.footer {
+/*.footer {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -13,4 +9,20 @@ body {
   background-color: darkcyan;
   text-align: center;
   color: white;
+}*/
+
+.footer {
+  position: fixed; /* Fixes the footer at the bottom of the viewport */
+  bottom: 0;       /* Ensures it stays at the bottom */
+  left: 0;
+  width: 100%;     /* Makes it span the entire width of the screen */
+  height: 50px;    /* Sets the height */
+  background-color: darkcyan;
+  text-align: center;
+  color: white;
+  z-index: 1000;   /* Ensures it stays on top of other elements */
+}
+
+body {
+  margin-bottom: 50px; /* Adds space at the bottom to avoid content being hidden by the footer */
 }
