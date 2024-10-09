@@ -13,7 +13,8 @@ Osnovni zadaci (riješeni su ~~precrtani~~):
 1. Pretraživanje bilješki prema tekstu. (SQL FULLTEXT indeksi)
 1. Bi li sve bilješke trebale biti vidljive svim korisnicima
    ili svakom korisniku samo njegove?
-1. Validacija inputa
+1. Validacija inputa na klijentu i na serveru
+1. Pop-up windows.
 1. Ne slanje nepotrebnih podataka u response
 
 Dodatni zadaci:
