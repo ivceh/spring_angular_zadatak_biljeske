@@ -6,17 +6,19 @@ Osnovni zadaci (riješeni su ~~precrtani~~):
    nego će trebati nova tablica za many-to-many relationship biljeskaid, kategorijaid)
 1. Ne dopušta se bilješka bez ijedne kategorije.
 1. ~~Paginacija (Prvo s dohvaćanjem svih podataka~~, kasnije s parcijalnim SQL upitima).
-1. Pamti se vrijeme i korisnik za bilješku. Prikaz toga u tablici.
+1. ~~Pamti se datum~~ i korisnik za bilješku. Prikaz toga u tablici.
 1. ~~Naslov bilješke.~~
 1. ~~Prikaz bilješki po kategoriji~~
 1. ~~Korištenje udaljene baze na render.com. (Trenutna lokalna baza je na [biljeske_app.sql](biljeske_app.sql))~~
 1. Pretraživanje bilješki prema tekstu. (SQL FULLTEXT indeksi)
 1. Bi li sve bilješke trebale biti vidljive svim korisnicima
    ili svakom korisniku samo njegove?
+1. Validacija inputa
+1. Ne slanje nepotrebnih podataka u response
 
 Dodatni zadaci:
 1. Pozabaviti se s deprecated stvarima u kodu (npr. subscribe).
-1. Pozabaviti se s duplikacijama u kodu.
+1. Pozabaviti se s duplikacijama u kodu (uključujući HTML).
 1. Pozabaviti se s private, public, protected.
 1. Provjeriti izazivaju li asinkroni pozivi funkcija još neki problem.
    (Morao sam osigurati da se prvo dohvati popis kategorija i tek onda bilješki u popis-biljeski.component)
