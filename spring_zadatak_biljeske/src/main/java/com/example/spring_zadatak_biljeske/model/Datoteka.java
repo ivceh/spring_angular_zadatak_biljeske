@@ -1,5 +1,6 @@
 package com.example.spring_zadatak_biljeske.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -20,6 +21,8 @@ public class Datoteka {
     private String tip;
 
     @Lob
+    @Basic(fetch = FetchType.LAZY)
+    @JsonIgnore
     @Column(name = "sadrzaj")
     private byte[] data;
 
@@ -32,6 +35,14 @@ public class Datoteka {
     }
 
     public Datoteka() {
+    }
+
+    public Datoteka(Datoteka datoteka) {
+        this.id = datoteka.id;
+        this.biljeskaid = datoteka.biljeskaid;
+        this.ime = ime;
+        this.tip = tip;
+        // this.data = data; zasad namjerno ne kopiram
     }
 
     public long getId() {

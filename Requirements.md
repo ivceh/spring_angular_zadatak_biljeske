@@ -15,7 +15,7 @@ Osnovni zadaci (riješeni su ~~precrtani~~):
    ili svakom korisniku samo njegove?
 1. Validacija inputa na klijentu i na serveru
 1. Pop-up windows.
-1. Ne slanje nepotrebnih podataka u response
+1. Ne slanje nepotrebnih podataka u response, ~~posebno Byte[] podaci~~
 
 Dodatni zadaci:
 1. Pozabaviti se s deprecated stvarima u kodu (npr. subscribe).
