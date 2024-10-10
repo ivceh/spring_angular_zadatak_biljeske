@@ -30,3 +30,5 @@ Dodatni zadaci:
 1. Upload više datoteka odjednom.
 1. Drag and drop datoteka.
 1. .gitignore i isključiti dosad praćene nepotrebne konfiguracije
+1. Datum stvaranja i zadnje promjene bilješke
+1. Očistiti file upload nakon uploada i brisanja.

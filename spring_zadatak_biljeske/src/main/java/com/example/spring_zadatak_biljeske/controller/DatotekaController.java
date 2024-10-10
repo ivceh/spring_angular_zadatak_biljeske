@@ -29,8 +29,8 @@ public class DatotekaController {
                                                @RequestParam("biljeskaid") Long biljeskaid)
             throws IOException {
         try {
-            Datoteka savedFile = this.saveFile(file, biljeskaid);
-            savedFile.setData(new byte[0]); // da se ne šalje nazad sadržaj datoteke
+            Datoteka savedFile = new Datoteka(this.saveFile(file, biljeskaid));
+            // savedFile.setData(new byte[0]); // da se ne šalje nazad sadržaj datoteke
             return ResponseEntity.ok(savedFile);
         } catch (IOException e) {
             return ResponseEntity.status(500).build();
